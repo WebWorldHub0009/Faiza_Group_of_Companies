@@ -280,7 +280,7 @@ export default function Footer() {
           </p>
           <p className="mt-1 text-[#777]">
             Designed and Developed by{" "}
-            <span className="text-[#C9A44C]">Web World Hub</span>
+            <a href='https://webworldhub.co.in/' className="text-[#C9A44C]">Web World Hub</a>
           </p>
         </div>
       </div>
