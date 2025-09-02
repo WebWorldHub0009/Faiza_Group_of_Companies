@@ -1,20 +1,41 @@
 // src/components/Navbar.jsx
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#1A1A1A] md:bg-transparent  font-['Poppins']">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-[#1A1A1A] md:bg-transparent font-['Poppins']">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Left: Links (desktop only) */}
         <ul className="hidden md:flex items-center gap-8 text-[#F9F9F9] text-sm">
-          <li className="hover:text-[#E5E5E5] cursor-pointer transition">Home</li>
-          <li className="hover:text-[#E5E5E5] cursor-pointer transition">About Us</li>
-          <li className="hover:text-[#E5E5E5] cursor-pointer transition">Services</li>
-          <li className="hover:text-[#E5E5E5] cursor-pointer transition">Showcase</li>
-          <li className="hover:text-[#E5E5E5] cursor-pointer transition">Contact Us</li>
+          <li>
+            <Link to="/" className="hover:text-[#E5E5E5] cursor-pointer transition">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="hover:text-[#E5E5E5] cursor-pointer transition">
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/services" className="hover:text-[#E5E5E5] cursor-pointer transition">
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link to="/showcase" className="hover:text-[#E5E5E5] cursor-pointer transition">
+              Showcase
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className="hover:text-[#E5E5E5] cursor-pointer transition">
+              Contact Us
+            </Link>
+          </li>
         </ul>
 
         {/* Center: Text Logo */}
@@ -31,9 +52,12 @@ const Navbar = () => {
         {/* Right: Contact + Mobile Menu */}
         <div className="flex items-center gap-4">
           {/* Contact button (desktop only) */}
-          <button className="hidden md:block px-5 py-2 rounded-full border border-[#C9A44C] text-[#F9F9F9] hover:bg-gradient-to-r hover:from-[#C9A44C] hover:to-[#E3C567] hover:text-[#1A1A1A] transition">
+          <Link
+            to="/contact"
+            className="hidden md:block px-5 py-2 rounded-full border border-[#C9A44C] text-[#F9F9F9] hover:bg-gradient-to-r hover:from-[#C9A44C] hover:to-[#E3C567] hover:text-[#1A1A1A] transition"
+          >
             Contact Us
-          </button>
+          </Link>
 
           {/* Mobile menu button */}
           <button
@@ -66,24 +90,74 @@ const Navbar = () => {
 
         {/* Links */}
         <ul className="flex flex-col gap-6 mt-6 px-6 text-lg font-medium">
-          <li onClick={() => setIsOpen(false)} className="hover:text-[#E5E5E5] cursor-pointer transition">Home</li>
-          <li onClick={() => setIsOpen(false)} className="hover:text-[#E5E5E5] cursor-pointer transition">About Us</li>
-          <li onClick={() => setIsOpen(false)} className="hover:text-[#E5E5E5] cursor-pointer transition">Services</li>
-          <li onClick={() => setIsOpen(false)} className="hover:text-[#E5E5E5] cursor-pointer transition">Showcase</li>
-          <li onClick={() => setIsOpen(false)} className="hover:text-[#E5E5E5] cursor-pointer transition">Contact Us</li>
+          <li>
+            <Link
+              to="/"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-[#E5E5E5] cursor-pointer transition"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-[#E5E5E5] cursor-pointer transition"
+            >
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/services"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-[#E5E5E5] cursor-pointer transition"
+            >
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/showcase"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-[#E5E5E5] cursor-pointer transition"
+            >
+              Showcase
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-[#E5E5E5] cursor-pointer transition"
+            >
+              Contact Us
+            </Link>
+          </li>
         </ul>
 
         {/* Divider */}
         <div className="border-t border-[#333333] my-6"></div>
 
         {/* Contact Info */}
-        <div className=" px-6 text-sm text-[#B0B0B0] space-y-2">
-          <p><span className="text-[#C9A44C]">Contact:</span> 9412559380, 9897949433</p>
-          <p><span className="text-[#C9A44C]">Email:</span> Info@faizagroupofcompanies.in</p>
-          <p><span className="text-[#C9A44C]">UDYAM:</span> UP-02-0091695</p>
-          <p><span className="text-[#C9A44C]">NCS ID:</span> E20H75-1550062726267</p>
+        <div className="px-6 text-sm text-[#B0B0B0] space-y-2">
+          <p>
+            <span className="text-[#C9A44C]">Contact:</span> 9412559380, 9897949433
+          </p>
+          <p>
+            <span className="text-[#C9A44C]">Email:</span> Info@faizagroupofcompanies.in
+          </p>
+          <p>
+            <span className="text-[#C9A44C]">UDYAM:</span> UP-02-0091695
+          </p>
+          <p>
+            <span className="text-[#C9A44C]">NCS ID:</span> E20H75-1550062726267
+          </p>
         </div>
- <div className="border-t border-[#333333] my-6"></div>
+
+        <div className="border-t border-[#333333] my-6"></div>
+
         {/* Social Icons */}
         <div className="flex gap-5 px-6 mt-6 absolute bottom-4">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A44C] transition">
@@ -107,13 +181,11 @@ const Navbar = () => {
       {/* Overlay when sidebar is open */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40"
+          className="fixed inset-0 z-40"
           onClick={() => setIsOpen(false)}
         ></div>
       )}
-       {/* <div className="border-t border-[#cebb93] px-4"></div> */}
     </nav>
-    
   );
 };
 
