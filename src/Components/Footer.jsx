@@ -171,13 +171,15 @@ import {
   Instagram,
   Linkedin,
   Youtube,
+  Mail,
 } from "lucide-react";
 import VisitorCounter from "./VisitorCounter"; // assuming you already created this
-import bgImage from '../assets/images/footerbg.jpg'
+import bgImage from "../assets/images/footerbg.jpg";
+
 export default function Footer() {
   return (
     <footer
-      className="relative text-center py-12 px-6  bg-cover bg-center"
+      className="relative text-center py-12 px-6 bg-cover bg-center"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Overlay */}
@@ -272,6 +274,19 @@ export default function Footer() {
           <VisitorCounter />
         </div>
 
+        {/* Webmail Button */}
+        <div className="mb-8">
+          <a
+            href="https://md-in-82.webhostbox.net:2096/cpsess3927650103/3rdparty/roundcube/?_task=mail&_mbox=INBOX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#C9A44C] to-[#E3C567] text-black font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition transform duration-300"
+          >
+            <Mail className="w-5 h-5" />
+            Webmail
+          </a>
+        </div>
+
         {/* Copyright */}
         <div className="text-[#B0B0B0] text-xs">
           <p>
@@ -280,11 +295,12 @@ export default function Footer() {
           </p>
           <p className="mt-1 text-[#777]">
             Designed and Developed by{" "}
-            <a href='https://webworldhub.co.in/' className="text-[#C9A44C]">Web World Hub</a>
+            <a href="https://webworldhub.co.in/" className="text-[#C9A44C]">
+              Web World Hub
+            </a>
           </p>
         </div>
       </div>
     </footer>
   );
 }
-

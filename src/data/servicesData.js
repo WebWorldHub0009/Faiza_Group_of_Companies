@@ -1,12 +1,12 @@
 // Import all service images
-import s1 from "../assets/images/v1.jpg";
-import s2 from "../assets/images/v1.jpg";
-import s3 from "../assets/images/v1.jpg";
-import s4 from "../assets/images/v1.jpg";
-import s5 from "../assets/images/v1.jpg";
-import s6 from "../assets/images/v1.jpg";
-import s7 from "../assets/images/v1.jpg";
-import s8 from "../assets/images/v1.jpg";
+import s1 from "../assets/images/services/s1.jpg";
+import s2 from "../assets/images/n3.jpg";
+import s3 from "../assets/images/services/s3.jpg";
+import s4 from "../assets/images/services/s4.jpg";
+import s5 from "../assets/images/services/s5.jpg";
+import s6 from "../assets/images/services/s6.jpg";
+import s7 from "../assets/images/n2.jpg";
+import s8 from "../assets/images/services/s8.jpg";
 
 // Services data
 export const servicesData = [
