@@ -6,6 +6,7 @@ import Footer from "./Components/Footer"
 import About from "./Pages/About"
 import GalleryPage from "../../../Mountain_Trips/mountain-trip/src/Pages/Gallery"
 import Gallery from "./Pages/Gallery"
+import ServiceDetail from "./Pages/ServiceDetail"
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/showcase" element={<Gallery/>}/>
+        <Route path="/services/:id" element={<ServiceDetail />} />
       </Routes>
       <Footer/>
     </>

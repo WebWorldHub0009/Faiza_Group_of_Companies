@@ -1,38 +1,77 @@
 // src/components/Navbar.jsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import {
+  Menu,
+  X,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
+  ChevronDown,
+} from "lucide-react";
+import { servicesData } from "../data/servicesData"; // import your services array
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#1A1A1A] md:bg-transparent font-['Poppins']">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Left: Links (desktop only) */}
-        <ul className="hidden md:flex items-center gap-8 text-[#F9F9F9] text-sm">
+        <ul className="hidden md:flex items-center gap-8 text-[#F9F9F9] text-sm relative">
           <li>
-            <Link to="/" className="hover:text-[#E5E5E5] cursor-pointer transition">
+            <Link
+              to="/"
+              className="hover:text-[#E5E5E5] cursor-pointer transition"
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link to="/about" className="hover:text-[#E5E5E5] cursor-pointer transition">
+            <Link
+              to="/about"
+              className="hover:text-[#E5E5E5] cursor-pointer transition"
+            >
               About Us
             </Link>
           </li>
-          <li>
-            <Link to="/services" className="hover:text-[#E5E5E5] cursor-pointer transition">
-              Services
-            </Link>
+
+          {/* Services Dropdown */}
+          <li className="relative group">
+            <div className="flex items-center gap-1 cursor-pointer hover:text-[#E5E5E5] transition">
+              <span>Services</span>
+              <ChevronDown size={16} />
+            </div>
+            <ul className="absolute left-0 mt-2 bg-[#1A1A1A] border border-[#333] rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transform scale-95 group-hover:scale-100 transition-all duration-200 origin-top min-w-[220px]">
+              {servicesData.map((service) => (
+                <li key={service.id}>
+                  <Link
+                    to={service.path}
+                    className="block px-4 py-2 text-sm text-[#F9F9F9] hover:bg-[#2A2A2A] transition"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </li>
+
           <li>
-            <Link to="/showcase" className="hover:text-[#E5E5E5] cursor-pointer transition">
+            <Link
+              to="/showcase"
+              className="hover:text-[#E5E5E5] cursor-pointer transition"
+            >
               Showcase
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="hover:text-[#E5E5E5] cursor-pointer transition">
+            <Link
+              to="/contact"
+              className="hover:text-[#E5E5E5] cursor-pointer transition"
+            >
               Contact Us
             </Link>
           </li>
@@ -108,15 +147,38 @@ const Navbar = () => {
               About Us
             </Link>
           </li>
+
+          {/* Services Accordion */}
           <li>
-            <Link
-              to="/services"
-              onClick={() => setIsOpen(false)}
-              className="hover:text-[#E5E5E5] cursor-pointer transition"
+            <button
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
+              className="flex items-center justify-between w-full hover:text-[#E5E5E5] transition"
             >
-              Services
-            </Link>
+              <span>Services</span>
+              <ChevronDown
+                size={18}
+                className={`transform transition-transform ${
+                  isServicesOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {isServicesOpen && (
+              <ul className="mt-2 ml-4 flex flex-col gap-3 text-base">
+                {servicesData.map((service) => (
+                  <li key={service.id}>
+                    <Link
+                      to={service.path}
+                      onClick={() => setIsOpen(false)}
+                      className="block hover:text-[#C9A44C] transition"
+                    >
+                      {service.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
+
           <li>
             <Link
               to="/showcase"
@@ -143,16 +205,19 @@ const Navbar = () => {
         {/* Contact Info */}
         <div className="px-6 text-sm text-[#B0B0B0] space-y-2">
           <p>
-            <span className="text-[#C9A44C]">Contact:</span> 9412559380, 9897949433
+            <span className="text-[#C9A44C]">Contact:</span> 9412559380,
+            9897949433
           </p>
           <p>
-            <span className="text-[#C9A44C]">Email:</span> Info@faizagroupofcompanies.in
+            <span className="text-[#C9A44C]">Email:</span>{" "}
+            Info@faizagroupofcompanies.in
           </p>
           <p>
             <span className="text-[#C9A44C]">UDYAM:</span> UP-02-0091695
           </p>
           <p>
-            <span className="text-[#C9A44C]">NCS ID:</span> E20H75-1550062726267
+            <span className="text-[#C9A44C]">NCS ID:</span>{" "}
+            E20H75-1550062726267
           </p>
         </div>
 
@@ -160,19 +225,44 @@ const Navbar = () => {
 
         {/* Social Icons */}
         <div className="flex gap-5 px-6 mt-6 absolute bottom-4">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A44C] transition">
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#C9A44C] transition"
+          >
             <Facebook size={22} />
           </a>
-          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A44C] transition">
+          <a
+            href="https://www.twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#C9A44C] transition"
+          >
             <Twitter size={22} />
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A44C] transition">
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#C9A44C] transition"
+          >
             <Instagram size={22} />
           </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A44C] transition">
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#C9A44C] transition"
+          >
             <Linkedin size={22} />
           </a>
-          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A44C] transition">
+          <a
+            href="https://www.youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#C9A44C] transition"
+          >
             <Youtube size={22} />
           </a>
         </div>
@@ -180,10 +270,7 @@ const Navbar = () => {
 
       {/* Overlay when sidebar is open */}
       {isOpen && (
-        <div
-          className="fixed inset-0 z-40"
-          onClick={() => setIsOpen(false)}
-        ></div>
+        <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
       )}
     </nav>
   );
