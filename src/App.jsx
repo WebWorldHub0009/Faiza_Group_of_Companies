@@ -3,6 +3,7 @@ import Home from "./Pages/Home"
 import Navbar from "./Components/Navbar"
 import ScrollToTop from "./Components/ScrollToTop"
 import Footer from "./Components/Footer"
+import About from "./Pages/About"
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        
+        <Route path="/about" element={<About/>}/>
       </Routes>
       <Footer/>
     </>

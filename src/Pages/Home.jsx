@@ -5,7 +5,6 @@ import PremiumHero from '../Components/PremiumHero'
 import WhyChooseUs from '../Components/WhyChooseUs'
 import WebsiteStats from '../Components/WebsiteStats'
 import FAQ from '../Components/FAQ'
-import WhatWeOffer from '../Components/WhatWeOffer'
 
 const Home = () => {
   return (
@@ -16,7 +15,6 @@ const Home = () => {
       <WhyChooseUs/>
       <WebsiteStats/>
       <FAQ/>
-      <WhatWeOffer/>
     </div>
   )
 }
