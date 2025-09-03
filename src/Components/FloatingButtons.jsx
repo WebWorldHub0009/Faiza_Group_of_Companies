@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, MessageCircle, Headphones, X } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+
 
 const FloatingButtons = () => {
   const [open, setOpen] = useState(false);
@@ -37,7 +39,7 @@ const FloatingButtons = () => {
               className="w-12 h-12 flex items-center justify-center rounded-full bg-[#25D366] shadow-lg hover:scale-110 hover:shadow-2xl transition-transform"
               title="Chat on WhatsApp"
             >
-              <MessageCircle size={22} className="text-white" />
+              <FaWhatsapp size={22} className="text-white" />
             </motion.a>
           </>
         )}
