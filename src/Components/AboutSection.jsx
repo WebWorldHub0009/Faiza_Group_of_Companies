@@ -1,11 +1,7 @@
 // src/components/AboutSection.jsx
 import React from "react";
-import { Award, Users, Star } from "lucide-react";
-import img1 from "../assets/images/h1.jpg";
-import img2 from "../assets/images/h1.jpg";
-import img3 from "../assets/images/h1.jpg";
-import img4 from "../assets/images/h1.jpg";
-import logo from "../assets/images/faizalogo.png"; // ✅ Import Logo
+import { Award, Users, Star, Building2, Hammer } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
@@ -22,43 +18,40 @@ const AboutSection = () => {
               </span>
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed">
-              Step into a world of inspired interiors with{" "}
+              Step into a world of inspired construction and interiors with{" "}
               <span className="font-semibold text-white">
                 Faiza Group Of Companies
               </span>
-              . While officially established in <b>2025</b>, our roots in
-              Aligarh’s interior construction landscape extend back to{" "}
-              <b>2010</b>. We are dedicated to transforming your aspirations into
-              breathtaking realities.
+              . While officially established in <b>2025</b>, our foundation in
+              Aligarh’s construction and interior industry traces back to{" "}
+              <b>2010</b>. Over the years, we have turned visions into realities
+              by blending modern techniques with unmatched craftsmanship.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed mt-4">
-              As a leading interior construction contractor, we specialize in{" "}
-              <b>design, construction, and contracting</b>, bringing expertise
-              and passion to every project. Discover the art of perfect spaces
-              and let us help you build the interior of your dreams.
+              We provide a complete spectrum of services — from supplying{" "}
+              <b>all types of building materials</b> to handling{" "}
+              <b>interior and exterior works, residential and commercial
+              construction, and professional contracting</b>. Our expertise also
+              extends to safe and efficient demolition of{" "}
+              <b>houses, plots, industrial sites, and commercial buildings</b>.
+              Whether it’s a new build, a renovation, or a demolition, we are
+              trusted for delivering excellence at every stage.
             </p>
           </div>
 
           {/* Right Side (Logo + Description + Button + Stats) */}
           <div className="max-w-md space-y-6">
-            {/* ✅ Logo Above Paragraph */}
-            {/* <div className="flex justify-center">
-              <img
-                src={logo}
-                alt="Faiza Group Logo"
-                className="w-32 h-auto object-contain mb-4 md:mb-6 drop-shadow-lg"
-              />
-            </div> */}
-
             <p className="text-gray-400 leading-relaxed">
-              Imagine spaces that reflect your unique vision. With over a decade
-              of experience, we go beyond construction — we create interiors
-              that inspire and delight, blending functionality with timeless
-              elegance.
+              With more than a decade of dedication, we have built a reputation
+              for reliability and quality. From industrial spaces to elegant
+              homes, we shape environments that are functional, modern, and
+              timeless — ensuring every project exceeds expectations.
             </p>
-            <button className="px-8 py-4 bg-gradient-to-r from-[#C9A44C] to-[#E3C567] text-black text-base rounded-full shadow-lg hover:opacity-90 transition font-semibold">
+           <Link to='/about'>
+            <button className="cursor-pointer px-8 py-4 bg-gradient-to-r from-[#C9A44C] to-[#E3C567] text-black text-base rounded-full shadow-lg hover:opacity-90 transition font-semibold">
               Learn More About Us
             </button>
+           </Link>
 
             {/* Mini Stats Row */}
             <div className="grid grid-cols-3 gap-6 mt-8">
@@ -76,6 +69,30 @@ const AboutSection = () => {
                 <Star className="w-6 h-6 text-pink-400 mb-2" />
                 <h3 className="text-lg font-bold">5★</h3>
                 <p className="text-xs text-gray-400">Ratings</p>
+              </div>
+            </div>
+
+            {/* Services Highlights */}
+            <div className="mt-10 grid grid-cols-2 gap-6">
+              <div className="flex items-center gap-3">
+                <Building2 className="w-6 h-6 text-green-400" />
+                <span className="text-sm text-gray-300">
+                  Residential & Commercial
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Hammer className="w-6 h-6 text-orange-400" />
+                <span className="text-sm text-gray-300">Interior & Exterior</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Hammer className="w-6 h-6 text-purple-400" />
+                <span className="text-sm text-gray-300">Contracting & Materials</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Building2 className="w-6 h-6 text-red-400" />
+                <span className="text-sm text-gray-300">
+                  Demolition Services
+                </span>
               </div>
             </div>
           </div>

@@ -39,7 +39,7 @@ const ServiceDetail = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/70 flex items-end">
-          <div className="px-10 md:px-20 pb-16 animate-fadeInUp">
+          <div className="px-10 md:px-20 pb-8 animate-fadeInUp">
             <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg relative inline-block font-['Playfair_Display']">
               {service.title}
               <span className="absolute left-0 -bottom-2 h-1 w-2/3 bg-gradient-to-r from-[#C9A44C] to-[#E3C567] rounded-full"></span>
@@ -137,7 +137,7 @@ const ServiceDetail = () => {
 
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-[#C9A44C] to-[#E3C567]">
+      <section className="py-12 bg-gradient-to-r from-[#C9A44C] to-[#E3C567]">
         <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
           <h2 className="text-4xl font-bold text-black mb-6 drop-shadow font-['Playfair_Display']">
             Ready to start your project with {service.title}?

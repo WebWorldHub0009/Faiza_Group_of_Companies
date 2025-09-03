@@ -79,12 +79,12 @@ const Navbar = () => {
 
         {/* Center: Text Logo */}
         <div className="flex-1 flex justify-center">
-          <span className="text-[#F9F9F9] text-lg md:text-xl font-thin tracking-widest uppercase">
+          <span className="text-[#F9F9F9] text-md md:text-lg font-thin tracking-widest uppercase mr-8">
             Faiza{" "}
             <span className="tracking-widest bg-gradient-to-r from-[#C9A44C] to-[#E3C567] bg-clip-text text-transparent font-thin">
               Group
             </span>{" "}
-            of Industries
+            of Companies
           </span>
         </div>
 
@@ -112,7 +112,7 @@ const Navbar = () => {
       <div
         className={`fixed top-0 left-0 h-full w-72 bg-black text-[#F9F9F9] transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out z-50`}
+        } transition-transform duration-300 ease-in-out z-50 overflow-y-auto flex flex-col`}
       >
         {/* Close button */}
         <div className="flex justify-between items-center px-6 py-4 border-b border-[#333333]">
@@ -128,7 +128,7 @@ const Navbar = () => {
         </div>
 
         {/* Links */}
-        <ul className="flex flex-col gap-6 mt-6 px-6 text-lg font-medium">
+        <ul className="flex flex-col gap-6 mt-6 px-6 text-lg font-medium flex-grow">
           <li>
             <Link
               to="/"
@@ -148,7 +148,7 @@ const Navbar = () => {
             </Link>
           </li>
 
-          {/* Services Accordion */}
+          {/* Services Accordion with Smooth Transition */}
           <li>
             <button
               onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -157,26 +157,28 @@ const Navbar = () => {
               <span>Services</span>
               <ChevronDown
                 size={18}
-                className={`transform transition-transform ${
+                className={`transform transition-transform duration-300 ${
                   isServicesOpen ? "rotate-180" : ""
                 }`}
               />
             </button>
-            {isServicesOpen && (
-              <ul className="mt-2 ml-4 flex flex-col gap-3 text-base">
-                {servicesData.map((service) => (
-                  <li key={service.id}>
-                    <Link
-                      to={service.path}
-                      onClick={() => setIsOpen(false)}
-                      className="block hover:text-[#C9A44C] transition"
-                    >
-                      {service.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <ul
+              className={`ml-4 flex flex-col gap-3 text-base overflow-hidden transition-all duration-500 ease-in-out ${
+                isServicesOpen ? "max-h-96 mt-2" : "max-h-0"
+              }`}
+            >
+              {servicesData.map((service) => (
+                <li key={service.id}>
+                  <Link
+                    to={service.path}
+                    onClick={() => setIsOpen(false)}
+                    className="block hover:text-[#C9A44C] transition"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </li>
 
           <li>
@@ -220,11 +222,9 @@ const Navbar = () => {
             E20H75-1550062726267
           </p>
         </div>
-
-        <div className="border-t border-[#333333] my-6"></div>
-
-        {/* Social Icons */}
-        <div className="flex gap-5 px-6 mt-6 absolute bottom-4">
+<div className="border-t border-[#333333] my-3"></div>
+        {/* Social Icons (Fixed Bottom) */}
+        <div className="mt-auto px-6 py-4 flex gap-5 justify-start">
           <a
             href="https://www.facebook.com"
             target="_blank"
@@ -270,7 +270,7 @@ const Navbar = () => {
 
       {/* Overlay when sidebar is open */}
       {isOpen && (
-        <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+        <div className="fixed inset-0 z-40 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
       )}
     </nav>
   );

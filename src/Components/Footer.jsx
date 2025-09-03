@@ -164,6 +164,7 @@
 // }
 
 // src/components/Footer.jsx
+// src/components/Footer.jsx
 import React from "react";
 import {
   Facebook,
@@ -175,6 +176,7 @@ import {
 } from "lucide-react";
 import VisitorCounter from "./VisitorCounter"; // assuming you already created this
 import bgImage from "../assets/images/footerbg.jpg";
+import logo from "../assets/images/faizalogo.png"; // Importing logo
 
 export default function Footer() {
   return (
@@ -187,10 +189,15 @@ export default function Footer() {
 
       {/* Content */}
       <div className="relative z-10">
-        {/* Company Name */}
-        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#C9A44C] to-[#E3C567] bg-clip-text text-transparent mb-2">
-          Faiza Group Of Companies
-        </h2>
+        {/* Logo */}
+        <div className="flex justify-center mb-4">
+          <img
+            src={logo}
+            alt="Faiza Group Of Companies Logo"
+            className="h-18 md:h-24 object-contain"
+          />
+        </div>
+
         <p className="text-sm uppercase tracking-widest text-[#B0B0B0] mb-6">
           Excellence • Trust • Innovation
         </p>
@@ -203,9 +210,7 @@ export default function Footer() {
           <a href="/about" className="hover:text-[#C9A44C] transition">
             About Us
           </a>
-          <a href="/services" className="hover:text-[#C9A44C] transition">
-            Services
-          </a>
+          
           <a href="/showcase" className="hover:text-[#C9A44C] transition">
             Showcase
           </a>

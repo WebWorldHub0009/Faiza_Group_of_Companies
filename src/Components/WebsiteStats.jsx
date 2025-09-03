@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import statsImage1 from "../assets/images/h1.jpg";
-import statsImage2 from "../assets/images/h1.jpg";
+import statsImage1 from "../assets/images/n3.jpg";
+import statsImage2 from "../assets/images/n2.jpg";
 import bgDiamond from "../assets/images/statsbg.avif"; // Background image
 
 import { FaIndustry, FaUsers, FaProjectDiagram, FaAward } from "react-icons/fa";

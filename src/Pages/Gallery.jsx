@@ -60,7 +60,7 @@ export default function FaizaGallery() {
     <GalleryHero/>
       {/* Gallery Section */}
       <section className="w-full py-16 px-6 bg-[#1A1A1A]">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center" id="gallery">
           <h2 className="text-4xl md:text-5xl font-['Playfair_Display'] font-bold mb-4 leading-snug text-[#F9F9F9]">
             Our{" "}
             <span className="bg-gradient-to-r from-[#C9A44C] to-[#E3C567] bg-clip-text text-transparent">

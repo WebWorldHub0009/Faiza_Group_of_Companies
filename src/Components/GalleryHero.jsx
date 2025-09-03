@@ -2,6 +2,7 @@
 import React from "react";
 import { ChevronDown } from "lucide-react";
 import img from "../assets/images/gallery/gallerybg.jpg"; // Replace with your gallery hero image
+import { Link } from "react-router-dom";
 
 const GalleryHero = () => {
   return (
@@ -48,12 +49,14 @@ const GalleryHero = () => {
 
         {/* Premium Buttons */}
         <div className="flex flex-wrap gap-5 mb-6 justify-center">
-          <button className="px-8 py-3 font-semibold rounded-lg bg-gradient-to-r from-[#C9A44C] to-[#E3C567] text-black shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+          <a href="#gallery" className="px-6 py-2 font-semibold rounded-lg bg-gradient-to-r from-[#C9A44C] to-[#E3C567] text-black shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
             View Gallery
-          </button>
-          <button className="px-8 py-3 font-semibold rounded-lg bg-[#222]/70 border border-[#C9A44C]/60 text-[#F9F9F9] shadow-lg transform transition-all duration-500 hover:bg-gradient-to-r hover:from-[#C9A44C] hover:to-[#E3C567] hover:text-black hover:scale-105 hover:shadow-2xl">
+          </a>
+          <Link to='/about'>
+          <button className="cursor-pointer px-6 py-2 font-semibold rounded-lg bg-[#222]/70 border border-[#C9A44C]/60 text-[#F9F9F9] shadow-lg transform transition-all duration-500 hover:bg-gradient-to-r hover:from-[#C9A44C] hover:to-[#E3C567] hover:text-black hover:scale-105 hover:shadow-2xl">
             Learn More
           </button>
+          </Link>
         </div>
 
         {/* Supporting Line */}

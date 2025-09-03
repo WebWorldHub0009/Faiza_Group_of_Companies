@@ -3,10 +3,11 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import local images
-import h1 from "../assets/images/h1.jpg";
+import h1 from "../assets/images/luxury.jpg";
 import h2 from "../assets/images/h2.jpg";
-import h3 from "../assets/images/h3.jpg";
+import h3 from "../assets/images/v7.jpg";
 import h4 from "../assets/images/h4.jpg";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -95,9 +96,11 @@ const Hero = () => {
             <p className="mt-6 text-base md:text-lg text-[#E5E5E5] max-w-xl">
               {slides[current].desc}
             </p>
-            <button className="mt-8 px-6 py-3 border border-[#E3C567] text-[#F9F9F9] rounded-full hover:bg-gradient-to-r hover:from-[#C9A44C] hover:to-[#E3C567] hover:text-[#1A1A1A] transition">
+            <Link to='/showcase'>
+            <button className="cursor-pointer mt-8 px-6 py-3 border border-[#E3C567] text-[#F9F9F9] rounded-full hover:bg-gradient-to-r hover:from-[#C9A44C] hover:to-[#E3C567] hover:text-[#1A1A1A] transition">
               View More →
             </button>
+            </Link>
           </motion.div>
         </AnimatePresence>
       </div>

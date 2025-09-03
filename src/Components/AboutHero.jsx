@@ -1,6 +1,6 @@
 // src/components/AboutHero.jsx
 import React from "react";
-import img from "../assets/images/h1.jpg";
+import img from "../assets/images/about.jpg";
 
 const AboutHero = () => {
   return (
@@ -13,7 +13,7 @@ const AboutHero = () => {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#1A1A1A]/70"></div>
+      <div className="absolute inset-0 bg-[#1A1A1A]/40"></div>
 
       {/* Content Wrapper */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">

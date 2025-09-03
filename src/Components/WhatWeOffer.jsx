@@ -9,6 +9,7 @@ import {
   Sparkles,
   Home,
 } from "lucide-react";
+import {Link} from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -101,9 +102,11 @@ export default function WhatWeOffer() {
             specialize in interiors, construction, and contracting, blending
             expertise with elegance.
           </p>
-          <button className="px-6 py-2.5 bg-gradient-to-r from-[#C9A44C] to-[#E3C567] text-black font-semibold rounded-lg shadow-md hover:opacity-90 transition">
-            Get Started
+          <Link to='/contact'>
+          <button className="cursor-pointer px-6 py-2.5 bg-gradient-to-r from-[#C9A44C] to-[#E3C567] text-black font-semibold rounded-lg shadow-md hover:opacity-90 transition">
+            Contact Us
           </button>
+          </Link>
         </div>
 
         {/* Right Section - Vertical Slider */}
