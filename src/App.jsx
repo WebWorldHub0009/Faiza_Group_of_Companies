@@ -10,6 +10,7 @@ import ServiceDetail from "./Pages/ServiceDetail"
 import Contact from "./Pages/Contact"
 import CertificatePage from "./Pages/CertificatePage"
 import FloatingButtons from "./Components/FloatingButtons"
+import NotFound from "./Components/NotFound"
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/services/:id" element={<ServiceDetail />} />
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/certificates" element={<CertificatePage/>}/>
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
       <Footer/>
       <FloatingButtons/>
